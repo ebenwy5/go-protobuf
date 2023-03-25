@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package go-user;
+
+option go_package = "github.com/ebenwy5/go-protobuf/go-user";
+
+service UserService {
+    rpc GetUser(GetUserRequest) returns (GetUserResponse);
+}
+
+message GetUserRequest {
+    string user_id = 1;
+}
+
+message GetUserResponse {
+    string user_id = 1;
+    string username = 2;
+    string email = 3;
+}
